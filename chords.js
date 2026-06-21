@@ -27,6 +27,7 @@ const chords = {
 
 const start = document.getElementById("start")
 start.addEventListener('click',()=>{
+    console.log('start was pushed')
     let rmIdx = Math.floor(Math.random() * keys.length);
     let key=keys[rmIdx]
     for (let i = 0;i<4;i++) {
