@@ -1,4 +1,4 @@
-console.log("ver:0.0.1")
+console.log("ver:0.0.2")
 
 const keys = [
   261.63,
@@ -15,6 +15,7 @@ const keys = [
   493.88
 ];
 let chordProg = []
+let key;
 
 //コードの中身は設定で変える。(ダイアトニックだけなのか、モードを変えたりするのかとか)
 const chords = [
@@ -33,7 +34,7 @@ start.addEventListener('click',()=>{
 
     console.log('start was pushed')
     let rmIdx = Math.floor(Math.random() * keys.length);
-    let key=keys[rmIdx]
+    key=keys[rmIdx]
     console.log(`key:${key}`)
     for (let i = 0;i<4;i++) {
         let rmIdx = Math.floor(Math.random() * chords.length);
@@ -52,8 +53,8 @@ hearI.addEventListener('click',()=>{
     const ctx=new (window.AudioContext || window.webkitAudioContext)();
     const osc = ctx.createOscillator()
     const gainNode = audioCtx.createGain();
-    oscillator.frequency.value = key;
-    oscillator.type = 'triangle'
+    osc.frequency.value = key;
+    osc.type = 'triangle'
     gainNode.gain.value = 0.05;
     osc.connect(gainNode);
     gainNode.connect(ctx.destination);
