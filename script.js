@@ -1,4 +1,4 @@
-console.log("ver:0.0.6")
+console.log("ver:0.1.0")
 let isQuestionActive
 
 const keys = [
