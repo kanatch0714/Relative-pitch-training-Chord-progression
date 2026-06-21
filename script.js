@@ -27,12 +27,16 @@ const chords = [
 
 const start = document.getElementById("start")
 start.addEventListener('click',()=>{
+    let isQuestionActive=true
+    start.textContent = '答えを見る'
+    start.id = "ans-btn";
     console.log('start was pushed')
     let rmIdx = Math.floor(Math.random() * keys.length);
     let key=keys[rmIdx]
+    console.log(`key:${key}`)
     for (let i = 0;i<4;i++) {
         let rmIdx = Math.floor(Math.random() * chords.length);
         chordProg.push(chords[rmIdx])
     }
-    console.log(chordProg)
+    console.log(`chordProg:${chordProg}`)
 })
