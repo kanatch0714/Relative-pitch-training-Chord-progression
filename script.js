@@ -37,7 +37,7 @@ start.addEventListener('click',()=>{
         let rmIdx = Math.floor(Math.random() * chords.length);
         chordProg.push(chords[rmIdx])
     }
-    console.log(`chordProg:${chordProg}`)
+    console.log("chordProg:"+chordProg)
     start.textContent = '答えを見る'
     start.id = "ans-btn";
 
