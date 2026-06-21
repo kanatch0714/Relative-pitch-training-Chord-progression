@@ -16,6 +16,8 @@ const keys = [
 ];
 const start = document.getElementById("start")
 const hearI = document.getElementById("hearI")
+const ans = document.getElementById("ans-btn")
+
 hearI.disabled = true
 let chordProg = []
 let key;
@@ -66,4 +68,10 @@ hearI.addEventListener('click',()=>{
     osc.start()
     osc.stop(ctx.currentTime + 0.5)
 
+})
+
+ans.addEventListener('click',()=>{
+    console.log('ans was pushed')
+    isQuestionActive == false
+    hearI.disable = true
 })
