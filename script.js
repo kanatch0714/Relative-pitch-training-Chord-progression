@@ -1,3 +1,5 @@
+console.log("ver:0.0.1")
+
 const keys = [
   261.63,
   277.18,
