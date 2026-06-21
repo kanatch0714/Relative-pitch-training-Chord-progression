@@ -24,8 +24,8 @@ const chords = {
     ,"7":{deg:7, type:dim}
 }
 
-const start = getElementById('start')
-start.addEventListener(type='click',()=>{
+const start = document.getElementById('start')
+start.addEventListener('click',()=>{
     let rmIdx = Math.floor(Math.random() * keys.length);
     let key=keys[rmIdx]
     let progress = []
