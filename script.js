@@ -1,4 +1,4 @@
-console.log("ver:0.0.2")
+console.log("ver:0.0.3")
 
 const keys = [
   261.63,
@@ -52,7 +52,7 @@ hearI.addEventListener('click',()=>{
     console.log('hearI was pushed')
     const ctx=new (window.AudioContext || window.webkitAudioContext)();
     const osc = ctx.createOscillator()
-    const gainNode = audioCtx.createGain();
+    const gainNode = ctx.createGain();
     osc.frequency.value = key;
     osc.type = 'triangle'
     gainNode.gain.value = 0.05;
