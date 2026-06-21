@@ -14,6 +14,9 @@ const keys = [
   466.16,
   493.88
 ];
+const start = document.getElementById("start")
+const hearI = document.getElementById("hearI")
+hearI.disabled = true
 let chordProg = []
 let key;
 
@@ -28,10 +31,12 @@ const chords = [
     ,{deg:7, type:"dim"}
 ]
 
-const start = document.getElementById("start")
+hearI.disabled = true
+
+
 start.addEventListener('click',()=>{
     let isQuestionActive=true
-
+    hearI.disabled = false
     console.log('start was pushed')
     let rmIdx = Math.floor(Math.random() * keys.length);
     key=keys[rmIdx]
@@ -47,7 +52,7 @@ start.addEventListener('click',()=>{
 })
 
 
-const hearI = document.getElementById("hearI")
+
 hearI.addEventListener('click',()=>{
     console.log('hearI was pushed')
     const ctx=new (window.AudioContext || window.webkitAudioContext)();
