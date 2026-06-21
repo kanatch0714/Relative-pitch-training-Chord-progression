@@ -1,4 +1,5 @@
 console.log("ver:0.0.5")
+let isQuestionActive
 
 const keys = [
   261.63,
@@ -16,7 +17,6 @@ const keys = [
 ];
 const start = document.getElementById("start")
 const hearI = document.getElementById("hearI")
-const ans = document.getElementById("ans-btn")
 
 hearI.disabled = true
 let chordProg = []
@@ -37,20 +37,25 @@ hearI.disabled = true
 
 
 start.addEventListener('click',()=>{
-    let isQuestionActive=true
-    hearI.disabled = false
-    console.log('start was pushed')
-    let rmIdx = Math.floor(Math.random() * keys.length);
-    key=keys[rmIdx]
-    console.log(`key:${key}`)
-    for (let i = 0;i<4;i++) {
-        let rmIdx = Math.floor(Math.random() * chords.length);
-        chordProg.push(chords[rmIdx])
+    if (start.textContent === '答えを見る') {
+        isQuestionActive = false
+        hearI.disabled = true
+        start.textContent = '次の問題へ'
     }
-    console.log("chordProg:"+chordProg)
-    start.textContent = '答えを見る'
-    start.id = "ans-btn";
-
+    else {//次の問題、スタートのときの処理
+        isQuestionActive=true
+        hearI.disabled = false
+        console.log('start was pushed')
+        let rmIdx = Math.floor(Math.random() * keys.length);
+        key=keys[rmIdx]
+        console.log(`key:${key}`)
+        for (let i = 0;i<4;i++) {
+            let rmIdx = Math.floor(Math.random() * chords.length);
+            chordProg.push(chords[rmIdx])
+        }
+        console.log("chordProg:"+chordProg)
+        start.textContent = '答えを見る'
+    }
 })
 
 
@@ -68,10 +73,4 @@ hearI.addEventListener('click',()=>{
     osc.start()
     osc.stop(ctx.currentTime + 0.5)
 
-})
-
-ans.addEventListener('click',()=>{
-    console.log('ans was pushed')
-    isQuestionActive == false
-    hearI.disable = true
 })
