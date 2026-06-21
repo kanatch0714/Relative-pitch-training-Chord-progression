@@ -42,3 +42,20 @@ start.addEventListener('click',()=>{
     start.id = "ans-btn";
 
 })
+
+
+const hearI = document.getElementById("hearI")
+start.addEventListener('click',()=>{
+    console.log('hearI was pushed')
+    const ctx=new (window.AudioContext || window.webkitAudioContext)();
+    const osc = ctx.createOscillator()
+    const gainNode = audioCtx.createGain();
+    oscillator.frequency.value = key;
+    oscillator.type = 'triangle'
+    gainNode.gain.value = 0.05;
+    osc.connect(gainNode);
+    gainNode.connect(ctx.destination);
+    osc.start()
+    osc.stop(ctx.currentTime + 0.5)
+
+})
