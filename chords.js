@@ -33,5 +33,5 @@ start.addEventListener('click',()=>{
         let rmIdx = Math.floor(Math.random() * chords.length);
         progress.push(chords[rmIdx])
     }
-console.log(progress)
+    console.log(progress)
 })
