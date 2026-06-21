@@ -28,10 +28,10 @@ const start = document.getElementById("start")
 start.addEventListener('click',()=>{
     let rmIdx = Math.floor(Math.random() * keys.length);
     let key=keys[rmIdx]
-    let progress = []
+    let chordProg = []
     for (let i = 0;i<4;i++) {
         let rmIdx = Math.floor(Math.random() * chords.length);
-        progress.push(chords[rmIdx])
+        chordProg.push(chords[rmIdx])
     }
-    console.log(progress)
+    console.log(chordProg)
 })
