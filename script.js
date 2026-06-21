@@ -28,8 +28,7 @@ const chords = [
 const start = document.getElementById("start")
 start.addEventListener('click',()=>{
     let isQuestionActive=true
-    start.textContent = '答えを見る'
-    start.id = "ans-btn";
+
     console.log('start was pushed')
     let rmIdx = Math.floor(Math.random() * keys.length);
     let key=keys[rmIdx]
@@ -39,4 +38,7 @@ start.addEventListener('click',()=>{
         chordProg.push(chords[rmIdx])
     }
     console.log(`chordProg:${chordProg}`)
+    start.textContent = '答えを見る'
+    start.id = "ans-btn";
+
 })
