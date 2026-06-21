@@ -45,7 +45,7 @@ start.addEventListener('click',()=>{
 
 
 const hearI = document.getElementById("hearI")
-start.addEventListener('click',()=>{
+hearI.addEventListener('click',()=>{
     console.log('hearI was pushed')
     const ctx=new (window.AudioContext || window.webkitAudioContext)();
     const osc = ctx.createOscillator()
